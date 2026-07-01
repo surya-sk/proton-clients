@@ -1,0 +1,23 @@
+## .NET / Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+## Windows App SDK / MSIX
+AppPackages/
+BundleArtifacts/
+Generated Files/
+*.appx
+*.appxbundle
+*.appxsym
+*.msix
+
+## Test results
+TestResults/
+*.trx
+
+## Rider / VS Code
+.idea/
+.vscode/
