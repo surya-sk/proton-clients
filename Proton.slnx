@@ -1,5 +1,7 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/Proton.Core/Proton.Core.csproj" />
+    <Project Path="src/Proton.Core/Proton.Core.csproj">
+      <Platform Solution="Debug|*" Project="x64" />
+    </Project>
   </Folder>
 </Solution>
