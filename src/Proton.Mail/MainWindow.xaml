@@ -1,0 +1,35 @@
+<Window
+    x:Class="Proton.Mail.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <NavigationView
+        x:Name="RootNavigationView"
+        IsBackButtonVisible="Collapsed"
+        IsSettingsVisible="False"
+        SelectionChanged="RootNavigationView_SelectionChanged">
+
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Inbox" Tag="Inbox">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="Mail" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Folders" Tag="Folders">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="Folder" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+
+        <NavigationView.PaneFooter>
+            <Button
+                Margin="12"
+                HorizontalAlignment="Stretch"
+                Content="New message"
+                Click="ComposeButton_Click" />
+        </NavigationView.PaneFooter>
+
+        <Frame x:Name="ContentFrame" />
+    </NavigationView>
+</Window>

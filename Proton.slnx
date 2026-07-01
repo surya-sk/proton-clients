@@ -1,7 +1,16 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Proton.Calendar/Proton.Calendar.csproj">
+      <Platform Project="x86" />
+    </Project>
     <Project Path="src/Proton.Core/Proton.Core.csproj">
       <Platform Solution="Debug|*" Project="x64" />
+    </Project>
+    <Project Path="src/Proton.Mail/Proton.Mail.csproj">
+      <Platform Project="x86" />
+    </Project>
+    <Project Path="src/Proton.Pass/Proton.Pass.csproj">
+      <Platform Project="x86" />
     </Project>
   </Folder>
   <Folder Name="/tests/">

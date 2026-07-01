@@ -1,0 +1,50 @@
+<Page
+    x:Class="Proton.Pass.Views.ItemDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Padding="16" RowSpacing="12" MaxWidth="480" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{x:Bind ViewModel.Item.Title, Mode=OneWay}" Style="{StaticResource TitleTextBlockStyle}" />
+
+        <TextBlock Grid.Row="1" Text="{x:Bind ViewModel.Item.TypeLabel, Mode=OneWay}" Opacity="0.6" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="8">
+            <TextBox
+                Header="Username"
+                IsReadOnly="True"
+                Width="320"
+                Text="{x:Bind ViewModel.Item.Username, Mode=OneWay}" />
+            <Button Content="Copy" VerticalAlignment="Bottom" Command="{x:Bind ViewModel.CopyUsernameCommand}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="8">
+            <TextBox
+                Header="Password"
+                IsReadOnly="True"
+                Width="320"
+                Text="{x:Bind ViewModel.MaskedPassword, Mode=OneWay}" />
+            <Button Content="Reveal" VerticalAlignment="Bottom" Command="{x:Bind ViewModel.TogglePasswordVisibilityCommand}" />
+            <Button Content="Copy" VerticalAlignment="Bottom" Command="{x:Bind ViewModel.CopyPasswordCommand}" />
+        </StackPanel>
+
+        <TextBox Grid.Row="4" Header="URL" IsReadOnly="True" Text="{x:Bind ViewModel.Item.Url, Mode=OneWay}" />
+
+        <TextBox
+            Grid.Row="5"
+            Header="Notes"
+            IsReadOnly="True"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            Height="100"
+            Text="{x:Bind ViewModel.Item.Notes, Mode=OneWay}" />
+    </Grid>
+</Page>

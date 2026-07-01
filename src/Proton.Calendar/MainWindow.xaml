@@ -1,0 +1,40 @@
+<Window
+    x:Class="Proton.Calendar.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <NavigationView
+        x:Name="RootNavigationView"
+        IsBackButtonVisible="Collapsed"
+        IsSettingsVisible="False"
+        SelectionChanged="RootNavigationView_SelectionChanged">
+
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Month" Tag="Month">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="Calendar" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Week" Tag="Week">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="View" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Day" Tag="Day">
+                <NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="Page" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+
+        <NavigationView.PaneFooter>
+            <Button
+                Margin="12"
+                HorizontalAlignment="Stretch"
+                Content="New event"
+                Click="NewEventButton_Click" />
+        </NavigationView.PaneFooter>
+
+        <Frame x:Name="ContentFrame" />
+    </NavigationView>
+</Window>

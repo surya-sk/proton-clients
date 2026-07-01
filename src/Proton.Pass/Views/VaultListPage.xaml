@@ -1,0 +1,43 @@
+<Page
+    x:Class="Proton.Pass.Views.VaultListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:models="using:Proton.Pass.Models">
+
+    <Grid Padding="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Vaults" Style="{StaticResource TitleTextBlockStyle}" Margin="0,0,0,12" />
+
+        <ComboBox
+            Grid.Row="1"
+            Margin="0,0,0,12"
+            ItemsSource="{x:Bind ViewModel.Vaults}"
+            SelectedItem="{x:Bind ViewModel.SelectedVault, Mode=TwoWay}"
+            DisplayMemberPath="Name" />
+
+        <ListView
+            x:Name="ItemListView"
+            Grid.Row="2"
+            ItemsSource="{x:Bind ViewModel.Items}"
+            SelectionMode="Single"
+            SelectionChanged="ItemListView_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:PassItem">
+                    <StackPanel Padding="8" Spacing="2">
+                        <TextBlock Text="{x:Bind Title}" FontWeight="SemiBold" />
+                        <TextBlock Opacity="0.7">
+                            <Run Text="{x:Bind TypeLabel}" />
+                            <Run Text=" - " />
+                            <Run Text="{x:Bind Username}" />
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
