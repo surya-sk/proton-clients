@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Proton.Core/Proton.Core.csproj" />
+  </Folder>
+</Solution>
