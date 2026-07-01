@@ -14,4 +14,8 @@
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Proton.Core.Tests" />
+  </ItemGroup>
+
 </Project>
